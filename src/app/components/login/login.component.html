@@ -1,0 +1,29 @@
+<section>
+  <div class="imgBx">
+    <img
+      src="./../../../assets/niclas-illg-wzVQp_NRIHg-unsplash.jpg"
+      alt="desk-computer"
+    />
+  </div>
+
+  <div class="contentBx">
+    <div class="formBx">
+      <h2>Inicio de Sesión</h2>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="inputBx">
+          <label>Correo Electrónico</label>
+          <input type="text" matInput formControlName="email" required />
+
+          <label>Contraseña</label>
+          <input type="password" matInput formControlName="password" required />
+
+          <button type="submit">Iniciar Sesisón</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- <button (click)="uploadFile()">uploadFile</button>
+    <button (click)="listFile()">listFile</button> -->
+  </div>
+</section>
