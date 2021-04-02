@@ -19,8 +19,6 @@ export class LoginComponent implements OnInit {
 
   private url = 'http://ec2-54-187-122-255.us-west-2.compute.amazonaws.com/';
   loginUrl = this.url + 'api/login2';
-  logoutUrl = this.url + 'api/logout';
-  profileUrl = this.url + 'api/users/';
 
   userData: any;
   userToken = '';
@@ -60,10 +58,14 @@ export class LoginComponent implements OnInit {
       console.log('Datos de Sesión: ', data);
 
       this.userToken = data.access_token;
+      const id = data.data.id;
 
       localStorage.setItem('userToken', this.userToken);
+      localStorage.setItem('userID', id);
 
       this.router.navigate(['user']);
+
+      console.log('ID: ', localStorage.getItem('userID'));
     } catch (error) {
       console.log(error);
     }

@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="left">
       <img src="./../../../assets/lila.jpg" alt="user-pic" width="150" />
-      <h4>Lila Ackerman</h4>
+      <h4>{{ userData.firstname }} {{ userData.lastname }}</h4>
       <p>UI Developer</p>
     </div>
 
@@ -13,12 +13,12 @@
         <div class="info-data">
           <div class="data">
             <h4>Email</h4>
-            <p>lila@gmail.com</p>
+            <p>{{ userData.email }}</p>
           </div>
 
           <div class="data">
             <h4>Phone</h4>
-            <p>551-234-5678</p>
+            <p>{{ userData.telephone }}</p>
           </div>
         </div>
       </div>
@@ -28,8 +28,8 @@
 
         <div class="job-data">
           <div class="data">
-            <h4>Role NAme</h4>
-            <p>lila@gmail.com</p>
+            <h4>Role Name</h4>
+            <p></p>
           </div>
 
           <div class="data">
