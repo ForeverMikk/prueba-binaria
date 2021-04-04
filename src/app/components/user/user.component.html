@@ -26,7 +26,19 @@
       <div class="job-info">
         <h3>Job Information</h3>
 
-        <div class="job-data">
+        <label class="btn btn-default">
+          <input type="file" (change)="selectFile($event)" />
+        </label>
+
+        <button
+          class="btn btn-success"
+          [disabled]="!selectedFiles"
+          (click)="upload()"
+        >
+          Upload
+        </button>
+
+        <!-- <div class="job-data">
           <div class="data">
             <h4>Role Name</h4>
             <p></p>
@@ -35,8 +47,8 @@
           <div class="data">
             <h4>Section</h4>
             <p>551-234-5678</p>
-          </div>
-        </div>
+          </div> -->
+        <!-- </div> -->
       </div>
     </div>
   </div>

@@ -17,12 +17,17 @@
     "target": "es2015",
     "module": "es2020",
     "lib": ["es2018", "dom"],
-    "types": ["node", "stream"]
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
+  },
+  "paths": {
+    "crypto": ["node_modules/crypto-browserify"],
+    "stream": ["node_modules/stream-browserify"]
   }
 }

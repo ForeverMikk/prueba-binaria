@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import axios from 'axios';
+
+import { UploadService } from './../../services/upload.service';
 
 @Component({
   selector: 'app-user',
@@ -17,7 +20,9 @@ export class UserComponent implements OnInit {
 
   userData: any;
 
-  constructor() {
+  selectedFiles: any;
+
+  constructor(private uploadService: UploadService) {
     this.getData();
   }
 
@@ -35,5 +40,18 @@ export class UserComponent implements OnInit {
     console.log(this.userData);
     console.log('Datos', this.userData.firstname);
     // console.log('Nombre ', this.userData.data[0].firstname);
+  }
+
+  upload() {
+    const file = this.selectedFiles.item(0);
+    this.uploadService.uploadFile(file);
+
+    console.log('Archivo: ', file);
+    console.log('Servicio: ', this.uploadService.uploadFile(file));
+  }
+
+  selectFile(event: any) {
+    this.selectedFiles = event.target.files;
+    console.log('Selected files', this.selectedFiles);
   }
 }

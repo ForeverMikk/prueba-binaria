@@ -8,13 +8,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginComponent } from './components/login/login.component';
 import { UserComponent } from './components/user/user.component';
-// import { UploadService } from './services/upload.service';
+import { UploadService } from './services/upload.service';
 
 // import { Client } from 'minio'
 @NgModule({
   declarations: [AppComponent, LoginComponent, UserComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [],
+  providers: [UploadService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

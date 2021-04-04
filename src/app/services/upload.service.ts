@@ -8,32 +8,31 @@ import * as S3 from 'aws-sdk/clients/s3';
 })
 export class UploadService {
   constructor() {}
-}
 
-function uploadFile(file: any) {
-  const contentType = file.type;
+  uploadFile(file: any) {
+    const contentType = file.type;
 
-  const bucket = new S3({
-    endpoint: '',
-    accessKeyId: 'YOUR-ACCESS-KEY-ID',
-    secretAccessKey: 'YOUR-SECRET-ACCESS-KEY',
-    region: 'YOUR-REGION',
-  });
+    const bucket = new S3({
+      endpoint: 's3.binahriaanalytics.ninja',
+      accessKeyId: 'S3_Binahria_T',
+      secretAccessKey: 'uVgsuanjRDhvyjIoNnwf',
+    });
 
-  const params = {
-    Bucket: 'YOUR-BUCKET-NAME',
-    Key: file.name,
-    Body: file,
-    ACL: 'public-read',
-    ContentType: contentType,
-  };
+    const params = {
+      Bucket: 's3.binahriaanalytics.ninja',
+      Key: file.name,
+      Body: file,
+      ACL: 'public-read',
+      ContentType: contentType,
+    };
 
-  bucket.upload(params, function (err: any, data: any) {
-    if (err) {
-      console.log('There was an error uploading your file: ', err);
-      return false;
-    }
-    console.log('Successfully uploaded file.', data);
-    return true;
-  });
+    bucket.upload(params, function (err: any, data: any) {
+      if (err) {
+        console.log('There was an error uploading your file: ', err);
+        return false;
+      }
+      console.log('Successfully uploaded file.', data);
+      return true;
+    });
+  }
 }
