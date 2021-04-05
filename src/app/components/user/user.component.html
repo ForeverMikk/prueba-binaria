@@ -8,7 +8,7 @@
 
     <div class="right">
       <div class="info">
-        <h3>Information</h3>
+        <h3>Información</h3>
 
         <div class="info-data">
           <div class="data">
@@ -17,26 +17,25 @@
           </div>
 
           <div class="data">
-            <h4>Phone</h4>
+            <h4>Telefono</h4>
             <p>{{ userData.telephone }}</p>
           </div>
         </div>
       </div>
 
       <div class="job-info">
-        <h3>Job Information</h3>
+        <h3>Subir un Archivo</h3>
 
-        <label class="btn btn-default">
-          <input type="file" (change)="selectFile($event)" />
-        </label>
+        <div class="job-data">
+          <label class="data">
+            <input type="file" (change)="selectFile($event)" />
+          </label>
 
-        <button
-          class="btn btn-success"
-          [disabled]="!selectedFiles"
-          (click)="upload()"
-        >
-          Upload
-        </button>
+          <button class="data" (click)="create()">Crear Bucket</button>
+          <button class="data" [disabled]="!selectedFiles" (click)="upload()">
+            Subir
+          </button>
+        </div>
 
         <!-- <div class="job-data">
           <div class="data">

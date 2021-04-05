@@ -18,7 +18,12 @@ export class UserComponent implements OnInit {
   logoutUrl = this.url + 'api/logout';
   profileUrl = this.url + 'api/users/';
 
-  userData: any;
+  userData = {
+    firstname: '',
+    lastname: '',
+    email: '',
+    telephone: '',
+  };
 
   selectedFiles: any;
 
@@ -26,7 +31,9 @@ export class UserComponent implements OnInit {
     this.getData();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.getData();
+  }
 
   async getData() {
     const { data } = await axios.get(this.profileUrl + this.userID, {
@@ -42,16 +49,20 @@ export class UserComponent implements OnInit {
     // console.log('Nombre ', this.userData.data[0].firstname);
   }
 
+  create() {
+    console.log(this.uploadService.createBucket());
+  }
+
   upload() {
     const file = this.selectedFiles.item(0);
     this.uploadService.uploadFile(file);
 
     console.log('Archivo: ', file);
-    console.log('Servicio: ', this.uploadService.uploadFile(file));
+    // console.log('Servicio: ', this.uploadService.uploadFile(file));
   }
 
   selectFile(event: any) {
     this.selectedFiles = event.target.files;
-    console.log('Selected files', this.selectedFiles);
+    console.log('Seleccionado', this.selectedFiles);
   }
 }
