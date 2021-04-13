@@ -17,7 +17,7 @@
     "target": "es2015",
     "module": "es2020",
     "lib": ["es2018", "dom"],
-    "types": ["node"],
+    "types": ["node", "minio"],
     "typeRoots": ["node_modules/@types"]
   },
   "angularCompilerOptions": {

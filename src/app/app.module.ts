@@ -8,13 +8,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginComponent } from './components/login/login.component';
 import { UserComponent } from './components/user/user.component';
-import { UploadService } from './services/upload.service';
+import { PruebaMinioComponent } from './components/prueba-minio/prueba-minio.component';
+// import { UploadService } from './services/upload.service';
 
 // import { Client } from 'minio'
 @NgModule({
-  declarations: [AppComponent, LoginComponent, UserComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    UserComponent,
+    PruebaMinioComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [UploadService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
